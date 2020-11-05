@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Download</title>
+    </head>
+    <body>
+        <div>
+            <input
+                type="text"
+                placeholder="paste link git vào đây..."
+                style="padding: 10px; margin-bottom: 10px;"
+                id="linkGit"
+                size="100"
+            />
+        </div>
+        <div><button onclick="download()">Download</button></div>
+        <div>
+<div style='margin-top: 5px'>
+                        <a href='./barcode_android_1604594450288.zip'>barcode_android_1604594450288.zip</a>
+                        <a href='/delete/barcode_android_1604594450288.zip' style='color:red'>Xóa</a>
+                    </div>
+                    <br/>
+<div style='margin-top: 5px'>
+                        <a href='./caro_android_1604594906247.zip'>caro_android_1604594906247.zip</a>
+                        <a href='/delete/caro_android_1604594906247.zip' style='color:red'>Xóa</a>
+                    </div>
+                    <br/>
+<div style='margin-top: 5px'>
+                        <a href='./CBIR-CNN_1604593555432.zip'>CBIR-CNN_1604593555432.zip</a>
+                        <a href='/delete/CBIR-CNN_1604593555432.zip' style='color:red'>Xóa</a>
+                    </div>
+                    <br/>
+<div style='margin-top: 5px'>
+                        <a href='./diem_danh_1604594921997.zip'>diem_danh_1604594921997.zip</a>
+                        <a href='/delete/diem_danh_1604594921997.zip' style='color:red'>Xóa</a>
+                    </div>
+                    <br/>
+        </div>
+    </body>
+    <script>
+        function download() {
+            let link = document.getElementById("linkGit").value;
+            link = link
+                .trim()
+                .replace(".git", "")
+                .replace("github.com", "codeload.github.com")
+                .concat("/zip/master")
+                .replace(/\//gi, "+");
+            if (link.includes("github.com")) {
+                window.location.href = `/downloadZip/${link}`;
+            } else {
+                alert(
+                    "Link git sai định dạng\nexample: https://github.com/TranKimTin/diem_danh"
+                );
+            }
+        }
+    </script>
+</html>

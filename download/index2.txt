@@ -1,0 +1,22 @@
+
+        </div>
+    </body>
+    <script>
+        function download() {
+            let link = document.getElementById("linkGit").value;
+            link = link
+                .trim()
+                .replace(".git", "")
+                .replace("github.com", "codeload.github.com")
+                .concat("/zip/master")
+                .replace(/\//gi, "+");
+            if (link.includes("github.com")) {
+                window.location.href = `/downloadZip/${link}`;
+            } else {
+                alert(
+                    "Link git sai định dạng\nexample: https://github.com/TranKimTin/diem_danh"
+                );
+            }
+        }
+    </script>
+</html>
